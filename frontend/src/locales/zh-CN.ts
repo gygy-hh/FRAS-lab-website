@@ -23,4 +23,15 @@ export default {
     switchLang: 'English',
     loading: '加载中...',
   },
+  admin: {
+    enter: '后台管理',
+    login: '管理员登录',
+    username: '账号',
+    password: '密码',
+    logout: '退出登录',
+    researchArea: '研究方向管理',
+    news: '新闻管理',
+    save: '保存',
+    delete: '删除',
+  },
 }

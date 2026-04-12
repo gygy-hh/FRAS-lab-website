@@ -23,4 +23,15 @@ export default {
     switchLang: '简体中文',
     loading: 'Loading...',
   },
+  admin: {
+    enter: 'Admin',
+    login: 'Admin Login',
+    username: 'Username',
+    password: 'Password',
+    logout: 'Logout',
+    researchArea: 'Research Areas',
+    news: 'News',
+    save: 'Save',
+    delete: 'Delete',
+  },
 }

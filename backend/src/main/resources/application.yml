@@ -1,12 +1,31 @@
 spring:
   application:
     name: fraslab-site
+  datasource:
+    url: ${DB_URL:jdbc:mysql://127.0.0.1:3306/fraslab?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true}
+    username: ${DB_USERNAME:fraslab}
+    password: ${DB_PASSWORD:FrasLab@2026_StrongPwd!}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
 
 server:
-  port: 8080
+  port: ${SERVER_PORT:8080}
 
 management:
   endpoints:
     web:
       exposure:
         include: health,info
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:ChangeThisJwtSecretToAStrongLongValueAtLeast32Chars}
+    expire-seconds: ${JWT_EXPIRE_SECONDS:7200}

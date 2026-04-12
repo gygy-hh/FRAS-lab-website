@@ -45,9 +45,22 @@ frontend/  Vue3 网站前台 + i18n
 docs/      过程文档与后续设计
 ```
 
-## 下一步（Step 2）
+## Step 2 已完成（MySQL + JWT + 管理端）
 
-- 接入 MySQL 与 Flyway，建立核心数据表：
-  - users / roles / permissions / user_roles
-  - advisors / members / research_areas / news（含 i18n 子表）
-- 实现后台登录（JWT）与 RBAC 权限控制。
+- 后端新增：
+  - MySQL + Flyway 自动建表（`db/migration/V1__init_schema.sql`）
+  - JWT 登录接口：`POST /api/v1/auth/login`
+  - 管理接口：
+    - `GET/POST/PUT/DELETE /api/v1/admin/research-areas`
+    - `GET/POST/PUT/DELETE /api/v1/admin/news`
+  - 前台接口新增：`GET /api/v1/public/news`
+- 前端新增：
+  - 路由：`/`、`/admin/login`、`/admin`
+  - 管理端登录页与基础管理页（研究方向/新闻）
+
+### 默认管理员账号
+
+- 用户名：`admin`
+- 密码：`Admin@123456`
+
+说明：该默认密码来自 Flyway 初始化数据，仅用于首期部署验证，上线后请立即修改。

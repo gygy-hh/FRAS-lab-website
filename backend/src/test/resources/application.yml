@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:fraslab;MODE=MYSQL;DB_CLOSE_DELAY=-1
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+  flyway:
+    enabled: false
+
+app:
+  jwt:
+    secret: TestJwtSecretValueAtLeast32Chars000
+    expire-seconds: 3600
