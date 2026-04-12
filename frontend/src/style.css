@@ -1,0 +1,119 @@
+:root {
+  font-family: "Microsoft YaHei", "PingFang SC", "Segoe UI", sans-serif;
+  line-height: 1.5;
+  color: #263238;
+  background-color: #f2f5f8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+.layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.08);
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 20px;
+  color: #fff;
+  background: #0f172a;
+}
+
+.brand {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.nav a {
+  color: #fff;
+  font-size: 14px;
+}
+
+.lang-btn {
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: transparent;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.hero {
+  padding: 72px 24px;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(120deg, rgba(15, 23, 42, 0.85), rgba(51, 65, 85, 0.8));
+}
+
+.hero h1 {
+  margin: 0 0 10px;
+  font-size: 34px;
+}
+
+.hero p {
+  margin: 0;
+  font-size: 18px;
+}
+
+.section-card {
+  margin: 20px;
+  border: 1px solid #dbe2ea;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.section-card h2 {
+  margin-top: 0;
+  color: #1f2a44;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.card {
+  border: 1px solid #cfd9e4;
+  border-radius: 6px;
+  padding: 16px;
+  background: #f8fbff;
+}
+
+.card h3 {
+  margin: 0;
+  color: #2767b7;
+}
+
+.footer {
+  text-align: center;
+  font-size: 13px;
+  padding: 16px 0 24px;
+  color: #6b7280;
+}
