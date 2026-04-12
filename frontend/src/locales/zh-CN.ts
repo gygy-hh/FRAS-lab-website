@@ -4,6 +4,7 @@ export default {
     advisor: '导师',
     member: '成员',
     research: '研究领域',
+    publications: '成果',
     news: '新闻',
     activity: '活动',
     contact: '联系我们',

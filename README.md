@@ -51,12 +51,21 @@ docs/      过程文档与后续设计
   - MySQL + Flyway 自动建表（`db/migration/V1__init_schema.sql`）
   - JWT 登录接口：`POST /api/v1/auth/login`
   - 管理接口：
+    - `GET/PUT /api/v1/admin/lab-profile`
     - `GET/POST/PUT/DELETE /api/v1/admin/research-areas`
     - `GET/POST/PUT/DELETE /api/v1/admin/news`
+    - `GET/POST/PUT/DELETE /api/v1/admin/advisors`
+    - `GET/POST/PUT/DELETE /api/v1/admin/members`
+    - `GET/POST/PUT/DELETE /api/v1/admin/publications`
+    - `GET/POST/PUT/DELETE /api/v1/admin/activities`
+  - 前台接口新增：`GET /api/v1/public/profile`（改为数据库读取）
   - 前台接口新增：`GET /api/v1/public/news`
+  - 前台接口新增：`GET /api/v1/public/advisors`、`GET /api/v1/public/members`
+  - 前台接口新增：`GET /api/v1/public/publications`
+  - 前台接口新增：`GET /api/v1/public/activities`
 - 前端新增：
   - 路由：`/`、`/admin/login`、`/admin`
-  - 管理端登录页与基础管理页（研究方向/新闻）
+  - 管理端登录页与基础管理页（研究方向/成果/新闻/活动/导师/成员）
 
 ### 默认管理员账号
 

@@ -4,6 +4,7 @@ export default {
     advisor: 'Advisor',
     member: 'Member',
     research: 'Research Area',
+    publications: 'Publications',
     news: 'News',
     activity: 'Activity',
     contact: 'Contact',

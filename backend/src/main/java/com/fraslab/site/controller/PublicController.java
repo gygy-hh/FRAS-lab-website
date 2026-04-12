@@ -1,10 +1,19 @@
 package com.fraslab.site.controller;
 
 import com.fraslab.site.common.ApiResponse;
+import com.fraslab.site.dto.publicapi.PublicAdvisorDto;
+import com.fraslab.site.dto.publicapi.PublicActivityDto;
+import com.fraslab.site.dto.publicapi.PublicMemberDto;
 import com.fraslab.site.dto.publicapi.PublicNewsDto;
+import com.fraslab.site.dto.publicapi.PublicPublicationDto;
 import com.fraslab.site.dto.publicapi.PublicResearchAreaDto;
 import com.fraslab.site.model.LabProfile;
+import com.fraslab.site.service.AdvisorService;
+import com.fraslab.site.service.ActivityService;
+import com.fraslab.site.service.LabProfileService;
+import com.fraslab.site.service.MemberService;
 import com.fraslab.site.service.NewsService;
+import com.fraslab.site.service.PublicationService;
 import com.fraslab.site.service.ResearchAreaService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,23 +27,33 @@ public class PublicController {
 
     private final ResearchAreaService researchAreaService;
     private final NewsService newsService;
+    private final AdvisorService advisorService;
+    private final MemberService memberService;
+    private final PublicationService publicationService;
+    private final ActivityService activityService;
+    private final LabProfileService labProfileService;
 
-    public PublicController(ResearchAreaService researchAreaService, NewsService newsService) {
+    public PublicController(
+            ResearchAreaService researchAreaService,
+            NewsService newsService,
+            AdvisorService advisorService,
+            MemberService memberService,
+            PublicationService publicationService,
+            ActivityService activityService,
+            LabProfileService labProfileService
+    ) {
         this.researchAreaService = researchAreaService;
         this.newsService = newsService;
+        this.advisorService = advisorService;
+        this.memberService = memberService;
+        this.publicationService = publicationService;
+        this.activityService = activityService;
+        this.labProfileService = labProfileService;
     }
 
     @GetMapping("/profile")
     public ApiResponse<LabProfile> profile() {
-        LabProfile profile = new LabProfile(
-                "FRAS-lab 智能与先进控制实验室",
-                "FRAS-lab for Robotics and Automation Systems",
-                "面向机器人与智能系统的先进控制研究",
-                "Advanced control research for robotic and intelligent systems",
-                "contact@fras-lab.example",
-                "+86-000-00000000"
-        );
-        return ApiResponse.ok(profile);
+        return ApiResponse.ok(labProfileService.getProfile());
     }
 
     @GetMapping("/research-areas")
@@ -45,5 +64,25 @@ public class PublicController {
     @GetMapping("/news")
     public ApiResponse<List<PublicNewsDto>> news() {
         return ApiResponse.ok(newsService.getPublicList());
+    }
+
+    @GetMapping("/advisors")
+    public ApiResponse<List<PublicAdvisorDto>> advisors() {
+        return ApiResponse.ok(advisorService.getPublicList());
+    }
+
+    @GetMapping("/members")
+    public ApiResponse<List<PublicMemberDto>> members() {
+        return ApiResponse.ok(memberService.getPublicList());
+    }
+
+    @GetMapping("/publications")
+    public ApiResponse<List<PublicPublicationDto>> publications() {
+        return ApiResponse.ok(publicationService.getPublicList());
+    }
+
+    @GetMapping("/activities")
+    public ApiResponse<List<PublicActivityDto>> activities() {
+        return ApiResponse.ok(activityService.getPublicList());
     }
 }

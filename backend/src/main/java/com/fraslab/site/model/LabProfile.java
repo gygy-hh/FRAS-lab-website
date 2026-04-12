@@ -6,6 +6,9 @@ public record LabProfile(
         String sloganZh,
         String sloganEn,
         String email,
-        String phone
+        String phone,
+        String addressZh,
+        String addressEn,
+        String mapLink
 ) {
 }
