@@ -1,9 +1,19 @@
 # FRAS-lab Website (Java + Vue)
 
-这是 FRAS-lab 实验室官网的首期工程骨架，采用前后端分离架构：
+FRAS-lab 官网项目，采用前后端分离架构，覆盖实验室公开信息展示与后台内容管理能力。
 
 - 后端：Spring Boot 3（`backend`）
 - 前端：Vue 3 + TypeScript + vue-i18n（`frontend`）
+
+## 项目简介
+
+本项目用于支撑实验室官方网站建设，当前版本已提供：
+
+- 前台公开展示：实验室简介、研究方向、导师、成员、科研成果、新闻、活动
+- 后台管理维护：管理员登录、实验室资料维护、各模块内容增删改查
+- 数据层能力：MySQL + Flyway 数据迁移与初始化
+
+详细版本说明见：`docs/CURRENT-VERSION.md`
 
 ## 已完成（Step 1）
 

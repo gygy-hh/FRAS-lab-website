@@ -61,6 +61,7 @@ public class NewsService {
         news.setSlug(request.slug());
         news.setStatus(request.status());
         news.setPublishedAt(request.publishedAt());
+        news.setImageUrl(request.imageUrl());
         news.getTranslations().clear();
         news.getTranslations().add(buildI18n(news, "zh-CN", request.titleZh(), request.contentZh()));
         news.getTranslations().add(buildI18n(news, "en", request.titleEn(), request.contentEn()));
@@ -81,9 +82,13 @@ public class NewsService {
         return new PublicNewsDto(
                 news.getId(),
                 news.getSlug(),
+                news.getStatus(),
                 news.getPublishedAt(),
+                news.getImageUrl(),
                 zh != null ? zh.getTitle() : "",
-                en != null ? en.getTitle() : ""
+                zh != null ? zh.getContent() : "",
+                en != null ? en.getTitle() : "",
+                en != null ? en.getContent() : ""
         );
     }
 

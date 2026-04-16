@@ -56,6 +56,7 @@ public class PublicationService {
         publication.setPubDate(request.pubDate());
         publication.setCategory(request.category());
         publication.setExternalUrl(request.externalUrl());
+        publication.setImageUrl(request.imageUrl());
         publication.setActive(request.active());
         publication.getTranslations().clear();
         publication.getTranslations().add(buildI18n(publication, "zh-CN", request.titleZh(), request.authorsZh(), request.abstractZh()));
@@ -82,6 +83,7 @@ public class PublicationService {
                 publication.getPubDate(),
                 publication.getCategory(),
                 publication.getExternalUrl(),
+                publication.getImageUrl(),
                 zh != null ? zh.getTitle() : "",
                 zh != null ? zh.getAuthors() : "",
                 zh != null ? zh.getAbstractText() : "",

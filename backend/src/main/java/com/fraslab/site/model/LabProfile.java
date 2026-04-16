@@ -9,6 +9,7 @@ public record LabProfile(
         String phone,
         String addressZh,
         String addressEn,
-        String mapLink
+        String introZh,
+        String introEn
 ) {
 }

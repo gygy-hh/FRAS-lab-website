@@ -31,6 +31,9 @@ public class News {
     @Column(name = "published_at")
     private LocalDateTime publishedAt;
 
+    @Column(name = "image_url", length = 512)
+    private String imageUrl;
+
     @OneToMany(mappedBy = "news", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<NewsI18n> translations = new ArrayList<>();
 
@@ -60,6 +63,14 @@ public class News {
 
     public void setPublishedAt(LocalDateTime publishedAt) {
         this.publishedAt = publishedAt;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public List<NewsI18n> getTranslations() {

@@ -55,6 +55,7 @@ public class ActivityService {
         activity.setStartTime(request.startTime());
         activity.setEndTime(request.endTime());
         activity.setLocation(request.location());
+        activity.setImageUrl(request.imageUrl());
         activity.setActive(request.active());
         activity.getTranslations().clear();
         activity.getTranslations().add(buildI18n(activity, "zh-CN", request.titleZh(), request.descriptionZh()));
@@ -79,6 +80,7 @@ public class ActivityService {
                 activity.getStartTime(),
                 activity.getEndTime(),
                 activity.getLocation(),
+                activity.getImageUrl(),
                 zh != null ? zh.getTitle() : "",
                 zh != null ? zh.getDescription() : "",
                 en != null ? en.getTitle() : "",

@@ -54,6 +54,7 @@ public class MemberService {
         member.setMemberCode(request.code());
         member.setRoleType(request.roleType());
         member.setEmail(request.email());
+        member.setCvPdfUrl(request.cvPdfUrl());
         member.setEnrollmentYear(request.enrollmentYear());
         member.setActive(request.active());
         member.getTranslations().clear();
@@ -78,6 +79,7 @@ public class MemberService {
                 member.getMemberCode(),
                 member.getRoleType(),
                 member.getEmail(),
+                member.getCvPdfUrl(),
                 member.getEnrollmentYear(),
                 zh != null ? zh.getFullName() : "",
                 zh != null ? zh.getBio() : "",

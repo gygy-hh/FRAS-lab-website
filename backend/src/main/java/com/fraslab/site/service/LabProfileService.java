@@ -35,7 +35,8 @@ public class LabProfileService {
         entity.setPhone(request.phone());
         entity.setAddressZh(request.addressZh());
         entity.setAddressEn(request.addressEn());
-        entity.setMapLink(request.mapLink());
+        entity.setIntroZh(request.introZh());
+        entity.setIntroEn(request.introEn());
         return toModel(entity);
     }
 
@@ -54,7 +55,8 @@ public class LabProfileService {
                 entity.getPhone(),
                 entity.getAddressZh(),
                 entity.getAddressEn(),
-                entity.getMapLink()
+                entity.getIntroZh(),
+                entity.getIntroEn()
         );
     }
 }

@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { getToken } from '../utils/auth'
 
 export interface ApiResponse<T> {
   code: number
@@ -13,7 +14,7 @@ export const apiClient = axios.create({
 })
 
 apiClient.interceptors.request.use((config) => {
-  const token = localStorage.getItem('fraslab_admin_token')
+  const token = getToken()
   if (token) {
     config.headers.Authorization = `Bearer ${token}`
   }

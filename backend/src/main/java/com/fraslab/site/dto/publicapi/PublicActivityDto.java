@@ -8,6 +8,7 @@ public record PublicActivityDto(
         LocalDateTime startTime,
         LocalDateTime endTime,
         String location,
+        String imageUrl,
         String titleZh,
         String descriptionZh,
         String titleEn,

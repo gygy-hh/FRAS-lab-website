@@ -14,12 +14,13 @@ public record PublicationUpsertRequest(
         @NotNull LocalDate pubDate,
         @NotBlank @Size(max = 32) String category,
         @Size(max = 512) String externalUrl,
+        @Size(max = 512) String imageUrl,
         @NotNull Boolean active,
         @NotBlank @Size(max = 300) String titleZh,
         @NotBlank @Size(max = 2000) String authorsZh,
-        @NotBlank @Size(max = 3000) String abstractZh,
+        @NotBlank String abstractZh,
         @NotBlank @Size(max = 300) String titleEn,
         @NotBlank @Size(max = 2000) String authorsEn,
-        @NotBlank @Size(max = 3000) String abstractEn
+        @NotBlank String abstractEn
 ) {
 }

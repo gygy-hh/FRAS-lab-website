@@ -7,6 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
@@ -28,7 +29,8 @@ public class ResearchAreaI18n {
     @Column(nullable = false, length = 200)
     private String name;
 
-    @Column(nullable = false, length = 1000)
+    @Lob
+    @Column(nullable = false, columnDefinition = "LONGTEXT")
     private String summary;
 
     public Long getId() {

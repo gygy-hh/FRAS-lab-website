@@ -9,8 +9,8 @@ public record ResearchAreaUpsertRequest(
         @NotNull Integer displayOrder,
         @NotNull Boolean active,
         @NotBlank @Size(max = 200) String nameZh,
-        @NotBlank @Size(max = 1000) String summaryZh,
+        @NotBlank String summaryZh,
         @NotBlank @Size(max = 200) String nameEn,
-        @NotBlank @Size(max = 1000) String summaryEn
+        @NotBlank String summaryEn
 ) {
 }

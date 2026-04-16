@@ -8,11 +8,12 @@ public record MemberUpsertRequest(
         @NotBlank @Size(max = 64) String code,
         @NotBlank @Size(max = 64) String roleType,
         @Size(max = 120) String email,
+        @Size(max = 512) String cvPdfUrl,
         Integer enrollmentYear,
         @NotNull Boolean active,
         @NotBlank @Size(max = 120) String fullNameZh,
-        @NotBlank @Size(max = 1200) String bioZh,
+        @NotBlank String bioZh,
         @NotBlank @Size(max = 120) String fullNameEn,
-        @NotBlank @Size(max = 1200) String bioEn
+        @NotBlank String bioEn
 ) {
 }

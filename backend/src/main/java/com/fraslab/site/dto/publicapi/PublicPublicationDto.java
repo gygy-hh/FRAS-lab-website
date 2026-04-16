@@ -9,6 +9,7 @@ public record PublicPublicationDto(
         LocalDate pubDate,
         String category,
         String externalUrl,
+        String imageUrl,
         String titleZh,
         String authorsZh,
         String abstractZh,

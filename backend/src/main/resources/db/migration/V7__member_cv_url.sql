@@ -1,0 +1,1 @@
+ALTER TABLE members ADD COLUMN cv_pdf_url VARCHAR(512) NULL AFTER email;

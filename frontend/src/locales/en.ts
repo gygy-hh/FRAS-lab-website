@@ -1,7 +1,6 @@
 export default {
   nav: {
     home: 'Home',
-    advisor: 'Advisor',
     member: 'Member',
     research: 'Research Area',
     publications: 'Publications',
@@ -18,11 +17,16 @@ export default {
     contact: 'Contact',
   },
   footer: {
-    copyright: 'Copyright © FRAS-lab',
+    copyright: 'Copyright © gaoy',
   },
   common: {
     switchLang: '简体中文',
     loading: 'Loading...',
+    link: 'Link',
+  },
+  page: {
+    homeIntroTitle: 'Lab Overview',
+    homeIntroText: 'Welcome to FRAS-lab. Please use the top navigation to visit each module page.',
   },
   admin: {
     enter: 'Admin',

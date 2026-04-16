@@ -30,6 +30,9 @@ public class Member {
     @Column(length = 120)
     private String email;
 
+    @Column(name = "cv_pdf_url", length = 512)
+    private String cvPdfUrl;
+
     @Column(name = "enrollment_year")
     private Integer enrollmentYear;
 
@@ -65,6 +68,14 @@ public class Member {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getCvPdfUrl() {
+        return cvPdfUrl;
+    }
+
+    public void setCvPdfUrl(String cvPdfUrl) {
+        this.cvPdfUrl = cvPdfUrl;
     }
 
     public Integer getEnrollmentYear() {

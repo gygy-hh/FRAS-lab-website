@@ -10,6 +10,7 @@ public record NewsUpsertRequest(
         @NotBlank @Size(max = 120) String slug,
         @NotBlank @Size(max = 20) String status,
         @NotNull LocalDateTime publishedAt,
+        @Size(max = 512) String imageUrl,
         @NotBlank @Size(max = 250) String titleZh,
         @NotBlank String contentZh,
         @NotBlank @Size(max = 250) String titleEn,

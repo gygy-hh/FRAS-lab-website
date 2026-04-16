@@ -18,10 +18,10 @@ public class LabProfileEntity {
     @Column(name = "name_en", nullable = false, length = 200)
     private String nameEn;
 
-    @Column(name = "slogan_zh", nullable = false, length = 500)
+    @Column(name = "slogan_zh", length = 500)
     private String sloganZh;
 
-    @Column(name = "slogan_en", nullable = false, length = 500)
+    @Column(name = "slogan_en", length = 500)
     private String sloganEn;
 
     @Column(nullable = false, length = 120)
@@ -30,14 +30,17 @@ public class LabProfileEntity {
     @Column(nullable = false, length = 64)
     private String phone;
 
-    @Column(name = "address_zh", nullable = false, length = 500)
+    @Column(name = "address_zh", length = 500)
     private String addressZh;
 
-    @Column(name = "address_en", nullable = false, length = 500)
+    @Column(name = "address_en", length = 500)
     private String addressEn;
 
-    @Column(name = "map_link", length = 512)
-    private String mapLink;
+    @Column(name = "intro_zh", columnDefinition = "LONGTEXT")
+    private String introZh;
+
+    @Column(name = "intro_en", columnDefinition = "LONGTEXT")
+    private String introEn;
 
     public Long getId() {
         return id;
@@ -111,11 +114,20 @@ public class LabProfileEntity {
         this.addressEn = addressEn;
     }
 
-    public String getMapLink() {
-        return mapLink;
+    public String getIntroZh() {
+        return introZh;
     }
 
-    public void setMapLink(String mapLink) {
-        this.mapLink = mapLink;
+    public void setIntroZh(String introZh) {
+        this.introZh = introZh;
     }
+
+    public String getIntroEn() {
+        return introEn;
+    }
+
+    public void setIntroEn(String introEn) {
+        this.introEn = introEn;
+    }
+
 }

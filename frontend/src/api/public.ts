@@ -9,7 +9,8 @@ export interface LabProfile {
   phone: string
   addressZh: string
   addressEn: string
-  mapLink: string
+  introZh: string
+  introEn: string
 }
 
 export interface ResearchArea {
@@ -25,9 +26,13 @@ export interface ResearchArea {
 export interface NewsItem {
   id: number
   slug: string
+  status: string
   publishedAt: string
+  imageUrl: string
   titleZh: string
+  contentZh: string
   titleEn: string
+  contentEn: string
 }
 
 export interface PublicationItem {
@@ -37,6 +42,7 @@ export interface PublicationItem {
   pubDate: string
   category: string
   externalUrl: string
+  imageUrl: string
   titleZh: string
   authorsZh: string
   abstractZh: string
@@ -51,23 +57,11 @@ export interface ActivityItem {
   startTime: string
   endTime: string
   location: string
+  imageUrl: string
   titleZh: string
   descriptionZh: string
   titleEn: string
   descriptionEn: string
-}
-
-export interface AdvisorItem {
-  id: number
-  code: string
-  email: string
-  phone: string
-  fullNameZh: string
-  titleZh: string
-  summaryZh: string
-  fullNameEn: string
-  titleEn: string
-  summaryEn: string
 }
 
 export interface MemberItem {
@@ -75,11 +69,19 @@ export interface MemberItem {
   code: string
   roleType: string
   email: string
+  cvPdfUrl: string
   enrollmentYear: number
   fullNameZh: string
   bioZh: string
   fullNameEn: string
   bioEn: string
+}
+
+export interface CarouselImageItem {
+  id: number
+  imageUrl: string
+  displayOrder: number
+  active: boolean
 }
 
 export async function fetchProfile() {
@@ -102,11 +104,6 @@ export async function fetchPublications() {
   return response.data.data
 }
 
-export async function fetchAdvisors() {
-  const response = await apiClient.get<ApiResponse<AdvisorItem[]>>('/public/advisors')
-  return response.data.data
-}
-
 export async function fetchMembers() {
   const response = await apiClient.get<ApiResponse<MemberItem[]>>('/public/members')
   return response.data.data
@@ -114,5 +111,10 @@ export async function fetchMembers() {
 
 export async function fetchActivities() {
   const response = await apiClient.get<ApiResponse<ActivityItem[]>>('/public/activities')
+  return response.data.data
+}
+
+export async function fetchCarouselImages() {
+  const response = await apiClient.get<ApiResponse<CarouselImageItem[]>>('/public/carousel-images')
   return response.data.data
 }

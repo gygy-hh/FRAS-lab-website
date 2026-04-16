@@ -1,0 +1,14 @@
+ALTER TABLE research_area_i18n
+    MODIFY COLUMN summary LONGTEXT NOT NULL;
+
+ALTER TABLE advisor_i18n
+    MODIFY COLUMN research_summary LONGTEXT NOT NULL;
+
+ALTER TABLE member_i18n
+    MODIFY COLUMN bio LONGTEXT NOT NULL;
+
+ALTER TABLE publication_i18n
+    MODIFY COLUMN abstract_text LONGTEXT NOT NULL;
+
+ALTER TABLE activity_i18n
+    MODIFY COLUMN description LONGTEXT NOT NULL;

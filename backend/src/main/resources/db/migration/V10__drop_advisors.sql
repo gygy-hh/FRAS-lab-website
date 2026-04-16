@@ -1,0 +1,2 @@
+DROP TABLE IF EXISTS advisor_i18n;
+DROP TABLE IF EXISTS advisors;

@@ -1,7 +1,6 @@
 export default {
   nav: {
     home: '首页',
-    advisor: '导师',
     member: '成员',
     research: '研究领域',
     publications: '成果',
@@ -18,11 +17,16 @@ export default {
     contact: '联系方式',
   },
   footer: {
-    copyright: 'Copyright © FRAS-lab',
+    copyright: 'Copyright © gaoy',
   },
   common: {
     switchLang: 'English',
     loading: '加载中...',
+    link: '链接',
+  },
+  page: {
+    homeIntroTitle: '实验室简介',
+    homeIntroText: '欢迎访问 FRAS-lab。请通过顶部导航进入各个模块页面。',
   },
   admin: {
     enter: '后台管理',

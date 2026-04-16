@@ -7,8 +7,8 @@ import { saveToken } from '../../utils/auth'
 
 const { t } = useI18n()
 const router = useRouter()
-const username = ref('admin')
-const password = ref('Admin@123456')
+const username = ref('')
+const password = ref('')
 const loading = ref(false)
 const errorMsg = ref('')
 

@@ -11,10 +11,11 @@ public record ActivityUpsertRequest(
         @NotNull LocalDateTime startTime,
         LocalDateTime endTime,
         @NotBlank @Size(max = 200) String location,
+        @Size(max = 512) String imageUrl,
         @NotNull Boolean active,
         @NotBlank @Size(max = 300) String titleZh,
-        @NotBlank @Size(max = 2000) String descriptionZh,
+        @NotBlank String descriptionZh,
         @NotBlank @Size(max = 300) String titleEn,
-        @NotBlank @Size(max = 2000) String descriptionEn
+        @NotBlank String descriptionEn
 ) {
 }

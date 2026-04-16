@@ -37,6 +37,9 @@ public class Publication {
     @Column(name = "external_url", length = 512)
     private String externalUrl;
 
+    @Column(name = "image_url", length = 512)
+    private String imageUrl;
+
     @Column(nullable = false)
     private boolean active;
 
@@ -85,6 +88,14 @@ public class Publication {
 
     public void setExternalUrl(String externalUrl) {
         this.externalUrl = externalUrl;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public boolean isActive() {
