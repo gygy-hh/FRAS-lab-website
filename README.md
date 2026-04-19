@@ -55,27 +55,39 @@ frontend/  Vue3 网站前台 + i18n
 docs/      过程文档与后续设计
 ```
 
-## Step 2 已完成（MySQL + JWT + 管理端）
+## 当前版本（Step 3）
 
-- 后端新增：
-  - MySQL + Flyway 自动建表（`db/migration/V1__init_schema.sql`）
-  - JWT 登录接口：`POST /api/v1/auth/login`
+- 后端能力：
+  - MySQL + Flyway 多版本迁移（`V1` 到 `V13`）
+  - JWT 登录鉴权：`POST /api/v1/auth/login`
   - 管理接口：
     - `GET/PUT /api/v1/admin/lab-profile`
     - `GET/POST/PUT/DELETE /api/v1/admin/research-areas`
-    - `GET/POST/PUT/DELETE /api/v1/admin/news`
-    - `GET/POST/PUT/DELETE /api/v1/admin/advisors`
     - `GET/POST/PUT/DELETE /api/v1/admin/members`
     - `GET/POST/PUT/DELETE /api/v1/admin/publications`
+    - `GET/POST/PUT/DELETE /api/v1/admin/news`
     - `GET/POST/PUT/DELETE /api/v1/admin/activities`
-  - 前台接口新增：`GET /api/v1/public/profile`（改为数据库读取）
-  - 前台接口新增：`GET /api/v1/public/news`
-  - 前台接口新增：`GET /api/v1/public/advisors`、`GET /api/v1/public/members`
-  - 前台接口新增：`GET /api/v1/public/publications`
-  - 前台接口新增：`GET /api/v1/public/activities`
-- 前端新增：
+    - `GET/POST/PUT/DELETE /api/v1/admin/carousel-images`
+    - 文件上传：`POST /api/v1/admin/upload`（图片/PDF）
+  - 前台接口：
+    - `GET /api/v1/public/profile`
+    - `GET /api/v1/public/research-areas`
+    - `GET /api/v1/public/members`
+    - `GET /api/v1/public/publications`
+    - `GET /api/v1/public/news`
+    - `GET /api/v1/public/activities`
+    - `GET /api/v1/public/carousel-images`
+    - `GET /api/v1/public/files/{fileName}`
+- 前端能力：
   - 路由：`/`、`/admin/login`、`/admin`
-  - 管理端登录页与基础管理页（研究方向/成果/新闻/活动/导师/成员）
+  - 公共页面模块：首页、研究方向、成员、成果、新闻、活动、联系
+  - 管理端模块：实验室信息、轮播图、研究方向、成员、成果、新闻、活动
+  - UI 样式全面升级（统一配色、卡片化布局、响应式优化）
+
+## 在线地址
+
+- 官网：`https://cslk.tech`
+- 管理后台：`https://cslk.tech/admin/login`
 
 ### 默认管理员账号
 
